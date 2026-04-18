@@ -198,9 +198,14 @@
 #define SYNTH_HAZARD_JOE "Hazard Joe"
 #define SYNTH_UPP_JOE "Dzho Automaton"
 #define SYNTH_K9 "Synthetic K9"
+#define SYNTH_WY "Weyland Yutani"
+#define SYNTH_HC "Hyperdyne Corporation"
+#define SYNTH_SG "Seegson"
+#define SYNTH_OTHER "Other"
 
 #define PLAYER_SYNTHS list(SYNTH_GEN_ONE, SYNTH_GEN_TWO, SYNTH_GEN_THREE)
 #define SYNTH_TYPES list(SYNTH_COMBAT, SYNTH_INFILTRATOR, SYNTH_WORKING_JOE, SYNTH_GEN_ONE, SYNTH_GEN_TWO, SYNTH_GEN_THREE)
+#define SYNTH_MANUFACTURERS list(SYNTH_WY, SYNTH_HC, SYNTH_SG, SYNTH_OTHER)
 
 // Human religion defines
 #define RELIGION_PROTESTANT "Christianity (Protestant)"

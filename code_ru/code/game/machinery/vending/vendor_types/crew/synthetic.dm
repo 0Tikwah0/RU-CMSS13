@@ -1,4 +1,16 @@
 //------------CLOTHING VENDOR---------------
+/obj/structure/machinery/cm_vending/clothing/synth/get_listed_products(mob/user)
+	var/synth_key_manufacturer = /obj/item/device/defibrillator/synthetic
+	switch(user.client.prefs.synth_manufacturer)
+		if(SYNTH_HC)
+			synth_key_manufacturer = /obj/item/device/defibrillator/synthetic/hyperdyne
+		if(SYNTH_SG)
+			synth_key_manufacturer = /obj/item/device/defibrillator/synthetic/seegson
+		if(SYNTH_WY, SYNTH_OTHER)
+			synth_key_manufacturer = /obj/item/device/defibrillator/synthetic
+
+	GLOB.cm_vending_clothing_synth[3][3] = synth_key_manufacturer
+	return GLOB.cm_vending_clothing_synth
 
 GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 		list("STANDARD EQUIPMENT (TAKE ALL)", 0, null, null, null),

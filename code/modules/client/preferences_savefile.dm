@@ -372,6 +372,7 @@
 //RUCM START
 	S["synth_voice"] >> synth_voice
 	S["synth_pitch"] >> synth_pitch
+	S["synth_manufacturer"] >> synth_manufacturer
 //RUCM END
 	S["synth_type"] >> synthetic_type
 	S["synth_specialisation"] >> synth_specialisation
@@ -527,6 +528,9 @@
 
 	synthetic_name = synthetic_name ? sanitize_text(synthetic_name, initial(synthetic_name)) : initial(synthetic_name)
 	synthetic_type = sanitize_inlist(synthetic_type, PLAYER_SYNTHS, initial(synthetic_type))
+//RUCM START
+	synth_manufacturer = sanitize_inlist(synth_manufacturer, SYNTH_MANUFACTURERS, initial(synth_manufacturer))
+//RUCM END
 	synth_specialisation = sanitize_inlist(synth_specialisation, list("Generalised", "Engineering", "Medical", "Intel", "Military Police", "Command"), initial(synth_specialisation))
 	predator_name = predator_name ? sanitize_text(predator_name, initial(predator_name)) : initial(predator_name)
 	predator_gender = sanitize_text(predator_gender, initial(predator_gender))
@@ -684,6 +688,7 @@
 //RUCM START
 	S["synth_voice"] << synth_voice
 	S["synth_pitch"] << synth_pitch
+	S["synth_manufacturer"] << synth_manufacturer
 //RUCM END
 	S["synth_type"] << synthetic_type
 	S["synth_specialisation"] << synth_specialisation

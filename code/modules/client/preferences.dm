@@ -118,6 +118,9 @@ GLOBAL_LIST_INIT(be_special_flags, list(
 	var/synthetic_name = "Undefined"
 	var/synthetic_type = SYNTH_GEN_THREE
 	var/synth_specialisation = "Generalised"
+//RUCM START
+	var/synth_manufacturer = SYNTH_WY
+//RUCM END
 	//Predator specific preferences.
 	var/predator_name = "Undefined"
 	var/predator_gender = MALE
@@ -576,17 +579,20 @@ GLOBAL_LIST_INIT(be_special_flags, list(
 				dat += "</div>"
 			else
 				dat += "<b>You do not have the whitelist for this role.</b>"
+//RUCM START
 		if(MENU_SYNTHETIC)
 			if(owner.check_whitelist_status(WHITELIST_SYNTHETIC))
 				dat += "<div id='column1'>"
 				dat += "<h2><b><u>Synthetic Settings:</u></b></h2>"
 				dat += "<b>Synthetic Name:</b> <a href='byond://?_src_=prefs;preference=synth_name;task=input'><b>[synthetic_name]</b></a><br>"
 				dat += "<b>Synthetic Type:</b> <a href='byond://?_src_=prefs;preference=synth_type;task=input'><b>[synthetic_type]</b></a><br>"
+				dat += "<b>Synthetic Manufacturer:</b> <a href='byond://?_src_=prefs;preference=synth_manufacturer;task=input'><b>[synth_manufacturer]</b></a><br>"
 				dat += "<b>Synthetic Whitelist Status:</b> <a href='byond://?_src_=prefs;preference=synth_status;task=input'><b>[synth_status]</b></a><br>"
 				dat += "<b>Synthetic Specialisation:</b> <a href='byond://?_src_=prefs;preference=synth_specialisation;task=input'><b>[synth_specialisation]</b></a><br>"
 				dat += "</div>"
 			else
 				dat += "<b>You do not have the whitelist for this role.</b>"
+//RUCM END
 
 		if(MENU_MENTOR)
 			if(owner.check_whitelist_status(WHITELIST_MENTOR))
@@ -1338,6 +1344,12 @@ GLOBAL_LIST_INIT(be_special_flags, list(
 					var/new_synth_type = tgui_input_list(user, "Choose your model of synthetic:", "Make and Model", PLAYER_SYNTHS)
 					if(new_synth_type)
 						synthetic_type = new_synth_type
+//RUCM START
+				if("synth_manufacturer")
+					var/new_synth_manufacturer = tgui_input_list(user, "Choose your manufacturer of synthetic:", "Manufacturer", SYNTH_MANUFACTURERS)
+					if(new_synth_manufacturer)
+						synth_manufacturer = new_synth_manufacturer
+//RUCM END
 				if("synth_specialisation")
 					var/list/options = list("Generalised", "Engineering", "Medical", "Intel", "Military Police", "Command")
 

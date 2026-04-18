@@ -183,9 +183,6 @@ GLOBAL_LIST_INIT(cm_vending_clothing_synth, list(
 	req_access = list(ACCESS_MARINE_SYNTH)
 	vendor_role = list(JOB_SYNTH, JOB_SYNTH_SURVIVOR, JOB_UPP_SUPPORT_SYNTH, JOB_CMB_SYN, JOB_CMB_RSYN, JOB_PMC_SYNTH, JOB_TWE_IASF_PARA_SYNTH, JOB_WY_GOON_SYNTH)
 
-/obj/structure/machinery/cm_vending/clothing/synth/get_listed_products(mob/user)
-	return GLOB.cm_vending_clothing_synth
-
 //------------SNOWFLAKE VENDOR---------------
 
 /datum/gear/synthetic
